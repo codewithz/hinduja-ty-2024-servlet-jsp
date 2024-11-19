@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Movie Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Store Movie Data</h2>
+    <form id="movieForm" method="post" action="save-movie">
+        <div class="form-group">
+            <label for="name">Movie Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="actor">Actor</label>
+            <input type="text" id="actor" name="actor" required>
+        </div>
+        <div class="form-group">
+            <label for="actress">Actress</label>
+            <input type="text" id="actress" name="actress" required>
+        </div>
+        <div class="form-group">
+            <label for="director">Director</label>
+            <input type="text" id="director" name="director" required>
+        </div>
+        <div class="form-group">
+            <label for="release_date">Release Date</label>
+            <input type="date" id="release_date" name="releaseDate" required>
+        </div>
+        <div class="form-group">
+            <label for="rate_point">Rate Point</label>
+            <input type="number" id="rate_point" name="rating" step="0.1" min="0" max="10" required>
+        </div>
+        <input type="submit" value="Save Movie" />
+    </form>
+</div>
+
+
+</body>
+</html>
