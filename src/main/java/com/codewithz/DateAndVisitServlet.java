@@ -17,16 +17,19 @@ public class DateAndVisitServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         HttpSession session = request.getSession();
-
+        Integer visitNumber = (Integer) session.getAttribute("visitNumber");
         Date lastVisited = (Date) session.getAttribute("lastVisited");
-        if(lastVisited == null) {
+        if(lastVisited == null || visitNumber == null) {
             out.println("<h1>Welcome this is your first visit</h1>");
+            visitNumber = new Integer(1);
         }else {
-            out.println("<h1> Welcome Back, Last Visited: " + lastVisited.toString() + "</h1>");
+            visitNumber = new Integer(visitNumber.intValue() + 1);
+            out.println("<h1> Welcome Back, Visit Number :"+visitNumber.intValue()+" Last Visited: " + lastVisited.toString() + "</h1>");
+
         }
         lastVisited = new Date();
         session.setAttribute("lastVisited", lastVisited);
-
+        session.setAttribute("visitNumber", visitNumber);
         out.close();
     }
 }
